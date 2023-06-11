@@ -9,7 +9,7 @@ const contactSlice = createSlice({
   initialState,
   reducers: {
     initialArrayContacts: (state, action) =>
-      void (state.arrayContacts = [...action.payload]),
+      void { ...state, formDataContact: [...action.payload] },
   },
 });
 
