@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  height: 50px;
+}
+.Link {
+  margin-left: 10px;
+  margin-right: 10px;
+}

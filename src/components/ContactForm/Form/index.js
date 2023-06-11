@@ -2,7 +2,7 @@ import { regexForm } from "../helpers";
 import style from "./style.module.css";
 import initialState from "../initialState";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import React, { useState } from "react";
 
 const Form = () => {
   const handleSubmit = (e) => {

@@ -1,18 +1,17 @@
 import React from "react";
-import style from "./style.module.css";
 import NavBar from "../NavBar";
-import { login } from "../api/auth";
-import { useForm } from "react-hook-form";
+import style from "./style.module.css";
 import { regexForm } from "../regexForm";
-import { initialState } from "./initialState";
+import { useForm } from "react-hook-form";
+import { initialState } from "./installState";
+import { register } from "../api/auth";
 
-const Login = () => {
+const Register = () => {
   const onSubmit = async (data) => {
-    const result = await login(data);
+    const result = await register(data);
     console.log(result);
     reset();
   };
-
   const {
     register,
     formState: { errors },
@@ -24,7 +23,7 @@ const Login = () => {
     <div>
       <NavBar />
       <form className={style.containerForm} onSubmit={handleSubmit(onSubmit)}>
-        <p>Login user</p>
+        <p>Register user</p>
         <input
           name="email"
           placeholder=" email"
@@ -49,4 +48,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
