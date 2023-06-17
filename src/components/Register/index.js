@@ -4,12 +4,13 @@ import style from "./style.module.css";
 import { regexForm } from "../regexForm";
 import { useForm } from "react-hook-form";
 import { initialState } from "./installState";
-import { register } from "../api/auth";
+import { getRegisterUser } from "../thunk/user";
+import { useDispatch } from "react-redux";
 
 const Register = () => {
+  const dispatch = useDispatch();
   const onSubmit = async (data) => {
-    const result = await register(data);
-    console.log(result);
+    await dispatch(getRegisterUser(data));
     reset();
   };
   const {

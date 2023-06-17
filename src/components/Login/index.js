@@ -1,18 +1,19 @@
 import React from "react";
 import style from "./style.module.css";
+import { useDispatch } from "react-redux";
 import NavBar from "../NavBar";
-import { login } from "../api/auth";
+import { loginUser } from "../thunk/user";
 import { useForm } from "react-hook-form";
 import { regexForm } from "../regexForm";
 import { initialState } from "./initialState";
 
 const Login = () => {
-  const onSubmit = async (data) => {
-    const result = await login(data);
-    console.log(result);
-    reset();
-  };
+  const dispatch = useDispatch();
 
+  const onSubmit = async (data) => {
+    await dispatch(loginUser(data));
+    return reset();
+  };
   const {
     register,
     formState: { errors },

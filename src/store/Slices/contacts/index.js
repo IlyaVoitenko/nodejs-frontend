@@ -1,18 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  arrayContacts: [],
+  listContacts: [],
 };
 
 const contactSlice = createSlice({
   name: "contacts",
   initialState,
   reducers: {
-    initialArrayContacts: (state, action) =>
-      void { ...state, formDataContact: [...action.payload] },
+    setContactsList: (state, action) =>
+      void { ...state, listContacts: [...action.payload] },
   },
 });
 
-export const { initialArrayContacts } = contactSlice.actions;
+export const { setContactsList } = contactSlice.actions;
 
 export default contactSlice.reducer;

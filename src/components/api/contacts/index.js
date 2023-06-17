@@ -1,13 +1,15 @@
-import instance from "../auth";
+import instance from "../user";
 
-export const getAllMovies = () => instance.get("/movies");
-
-export const deleteMovie = (id) => {
-  return instance.delete(`/movies/${id}`);
+export const getAllContacts = async () => {
+  await instance.get("/contacts");
 };
 
-export const addMovie = (data) => {
-  return instance.post("/movies", data, {
+export const deleteContact = (id) => {
+  return instance.delete(`/contacts/${id}`);
+};
+
+export const addContact = (data) => {
+  return instance.post("/contacts", data, {
     headers: {
       "Content-Type": "multipart/form-data",
     },

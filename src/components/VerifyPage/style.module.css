@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+}
+.divVerify {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  background-color: dodgerblue;
+  border-radius: 50%;
+  color: white;
+  height: 3vh;
+  width: 3vh;
+}
+.cc {
+  display: flex;
+  flex-direction: row-reverse;
+}
